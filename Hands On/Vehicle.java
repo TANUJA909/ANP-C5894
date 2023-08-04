@@ -1,55 +1,62 @@
-package oops;
-//Example of Multilevel inheritance
-//super class or base class or parent class
-public class Vehicle 
+package thursdayLab_3_8_2023;
+/*
+ Thursday Lab
+ Question 4: Create an abstract class called "Vehicle" with abstract methods "start()" and "stop()". 
+ Create two subclasses "Car" and "Motorcycle" that extend the "Vehicle" class and implement the abstract methods. 
+ Write a Java program to demonstrate starting and stopping operations for a car and a motorcycle.
+ */
+
+//Create an abstract class called "Vehicle"
+abstract class Vehicle 
 {
-	//fields & methods
-	String brand;
-	int year;
-	public void displayInfo()
-	{
-		System.out.println("Enter Brand and Year ");
-	}
-}
-class Car extends  Vehicle
-{
-	//fields & methods of Animal class
-	//fields & methods of Vehicle class
-	String model;
-	
+	//abstract methods "start()" and "stop()".
+	public abstract void start();
+	public abstract void stop();
 }
 
-class SportsCar extends Car
+//Create two subclasses "Car" and "Motorcycle" that extend the "Vehicle" class  
+class Car extends Vehicle
 {
-	  //fields & methods of Animal class
-     //fields & methods of Vehicle class
-	//fields & methods of SportsCar class
-	int topSpeed;
-	public void displayInfo()
+	//implement the abstract methods. 
+	public void start()
 	{
-		System.out.println("Enter Brand, Model, Year, Top Speed ");
+		System.out.println("Start the Car");
 	}
 	
+	public void stop()
+	{
+		System.out.println("Stop the Car");
+	}
 }
 
+class Motorcycle extends Vehicle
+{
+	//implement the abstract methods. 
+	public void start()
+	{
+		System.out.println("Start the Motorcycle");
+	}
+	
+	public void stop()
+	{
+		System.out.println("Stop the Motorcycle");
+	}
+}
+
+// demonstrate starting and stopping operations for a car and a motorcycle.
 class VehicleMain
 {
 	public static void main(String[] args)
 	{
-		//creating object of sub class
-		SportsCar s=new SportsCar();
-		//access fields & methods
-		s.brand="Tanu";
-		s.model="t123";
-		s.year=2012;
-		s.topSpeed=140;
-		s.displayInfo();
-		//Print value
-		System.out.println("Brand: "+s.brand);
-		System.out.println("Model: "+s.model);
-		System.out.println("Year: "+s.year);
-		System.out.println("Top Speed: "+s.topSpeed);
+		//creating object of sub class Car
+		Car c=new Car();
+		c.start();
+		c.stop();
+		
+		//creating object of sub class Motorcycle
+		Motorcycle m=new Motorcycle();
+		m.start();
+		m.stop();
 	}
+
 }
-
-
