@@ -1,4 +1,3 @@
-package thursdayLab_3_8_2023;
 /*
 Thursday Lab
 Question 3: Create a superclass called "Shape" with properties like "numSides" and "color". 
